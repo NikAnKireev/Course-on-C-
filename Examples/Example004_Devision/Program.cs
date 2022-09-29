@@ -1,7 +1,7 @@
 ﻿using System;
 
-double numberA = 25;
-double numberB = 5;
+double numberA = new Random().Next(1, 100);
+double numberB = new Random().Next(1, 100);
 
 double result = numberA / numberB;
 

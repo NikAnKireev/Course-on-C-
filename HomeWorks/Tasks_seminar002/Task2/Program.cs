@@ -23,7 +23,7 @@ int DelNumber(int N)
     if (N > -999 && N < -99) System.Console.Write($"-> {n1}{n2 * -1}");
     else
     {
-        System.Console.Write($"- число не трехзначное!");
+        System.Console.Write("- число не трехзначое!");
     }
     }
 

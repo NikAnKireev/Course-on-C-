@@ -7,13 +7,10 @@ Console.Clear();
 Console.Write("Введите число: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
 
-int count = 1;
+int count = 2;
 
 while (count <= numberN)
 {
-    if (count % 2 == 0)
-    {
-        Console.Write($"{count} ");
-    }
-    count++;
+    Console.Write($"{count} ");
+    count+=2;
 }

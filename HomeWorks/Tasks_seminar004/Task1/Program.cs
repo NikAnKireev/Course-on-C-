@@ -37,6 +37,6 @@ void MathPow(int values1, int values2)
     }
 }
 
-int test = InputNumber($"Введите первое число -> ");
-int test2 = InputNumber("Введите второе число -> ");
-MathPow(test, test2);
+int numberOne = InputNumber("Введите первое число -> ");
+int numberTwo = InputNumber("Введите второе число -> ");
+MathPow(numberOne, numberTwo);

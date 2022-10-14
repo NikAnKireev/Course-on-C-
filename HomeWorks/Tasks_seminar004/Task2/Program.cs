@@ -22,7 +22,14 @@ void FillArray(int[] values)
     for (int i = 0; i < values.Length; i++)
     {
         values[i] = new Random().Next(0, 10);
-        Console.Write($"{values[i]} ");
+    }
+}
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
     }
     System.Console.Write("-> ");
 }
@@ -41,4 +48,5 @@ void SumNumbers(int[] array)
 
 int[] array = ElementsCount("Введите количество элемента массива: ");
 FillArray(array);
+PrintArray(array);
 SumNumbers(array);

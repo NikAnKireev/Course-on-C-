@@ -39,7 +39,7 @@ int NotEvenPosition(int[] array)
     return sum;
 }
 
-int[] myArray = CreateArray(5, 100, 999);
+int[] myArray = CreateArray(5, -100, 100);
 PrintArray(myArray);
 Console.WriteLine();
 Console.WriteLine($"= {NotEvenPosition(myArray)} -> Сумма нечетных позиций.");

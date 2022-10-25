@@ -26,6 +26,7 @@ void PrintArray(int[] array)
     {
         Console.Write($"{array[i]} ");
     }
+    Console.WriteLine();
 }
 
 void PrintMatrix(int[,] array)
@@ -38,7 +39,7 @@ void PrintMatrix(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = rnd.Next(1, 10);
+            array[i, j] = rnd.Next(-9, 10);
             Console.Write($"{array[i, j]}\t");
         }
         Console.WriteLine();
@@ -61,14 +62,13 @@ int[] MaxNumberRow(int[,] array)
         newArray[i] = maxNumber;
         maxNumber = 0;
     }
-    Console.WriteLine();
-    PrintArray(newArray);
     return newArray;
 }
 
 int[] MinNumberColumn(int[,] array)
 {
-    int minNumber = 10;
+    int max = Sum(MaxNumberRow(array));
+    int minNumber = max;
     int[] newArray = new int[array.GetLength(1)];
     for (int i = 0; i < array.GetLength(1); i++)
     {
@@ -80,10 +80,8 @@ int[] MinNumberColumn(int[,] array)
             }
         }
         newArray[i] = minNumber;
-        minNumber = 10;
+        minNumber = max;
     }
-    Console.WriteLine();
-    PrintArray(newArray);
     return newArray;
 }
 
@@ -101,10 +99,15 @@ int Sum(int[] value)
 int Subduction(int arg1, int arg2)
 {
     int decision = arg1 - arg2;
-    Console.WriteLine();
+    Console.Write(decision);
     return decision;
 }
 
 int[,] myArray = InputMatrix("\nВведите количество строк: ", "\nВведите количество столбцов: ");
 PrintMatrix(myArray);
-Console.WriteLine(Subduction(Sum(MaxNumberRow(myArray)), Sum(MinNumberColumn(myArray))));
+Console.Write("\nМаксимальные числа в строках: ");
+PrintArray(MaxNumberRow(myArray));
+Console.Write("Минимальные числа в столбцах: ");
+PrintArray(MinNumberColumn(myArray));
+Console.Write("\nСумма чисел: ");
+Subduction(Sum(MaxNumberRow(myArray)), Sum(MinNumberColumn(myArray)));

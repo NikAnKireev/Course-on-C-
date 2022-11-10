@@ -42,15 +42,12 @@ Console.WriteLine(year); // выводим метод в консоль
 
 //Вид 4 что-то принимет и возвращает
 
-string Method4(int count, string c)
+string Method4(int count, string text)
 {
-    int i = 0;
     string result = String.Empty; // пустая строка или ""
-
-    while (i < count)
+    for (int i = 0; i < count; i++) // цикл for вместо while позволяет задать условие и счетчик в одной строке
     {
-        result = result + c;
-        i++;
+        result = result + text;
     }
     return result; // возвращает переменную result
 }

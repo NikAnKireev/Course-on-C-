@@ -28,5 +28,19 @@ string Replace(string text, char oldValue, char newValue)
     return result;
 }
 
+Console.WriteLine(text);
+
 string newText = Replace(text, ' ', '|');
+
 Console.WriteLine(newText);
+Console.WriteLine();
+
+newText = Replace(text, 'к', 'К');
+
+Console.WriteLine(newText);
+Console.WriteLine();
+
+newText = Replace(text, 'с', '+');
+
+Console.WriteLine(newText);
+Console.WriteLine();

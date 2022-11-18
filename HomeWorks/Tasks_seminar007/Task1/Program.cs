@@ -25,7 +25,7 @@ double[,] RandomMatrixFill(int lenRows, int lenColumns)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = Convert.ToDouble(new Random().Next(-10, 10)) / 1.1;
+            array[i, j] = new Random().Next(-10, 10) + new Random().NextDouble();
         }
     }
     return array;

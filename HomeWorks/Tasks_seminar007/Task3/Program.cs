@@ -41,17 +41,28 @@ void PrintMatrix(int[,] array)
     }
 }
 
-void ArithmeticMean(int[,] matrix)
+double[] ArithmeticAverage(int[,] matrix)
 {
+    double[] average = new double[matrix.GetLongLength(1)];
+
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        double sum = 0;
+        average[i] = 0;
 
         for (int j = 0; j < matrix.GetLength(0); j++)
         {
-            sum += matrix[j, i];
+            average[i] += matrix[j, i];
         }
-        Console.Write($"{sum / matrix.GetLength(0):f1}\t");
+        average[i] /= matrix.GetLength(0);
+    }
+    return average;
+}
+
+void PrintArray(double[] array)
+{
+    foreach (var item in array)
+    {
+        Console.Write($"{item:f1}\t");
     }
 }
 
@@ -63,4 +74,4 @@ Console.WriteLine();
 int[,] myMatrix = RandomMatrixFill(firstNumber, secondNumber);
 PrintMatrix(myMatrix);
 Console.WriteLine("\nСреднеарифметическое столбцов:");
-ArithmeticMean(myMatrix);
+PrintArray(ArithmeticAverage(myMatrix));

@@ -44,20 +44,9 @@ void PrintMatrix(int[,] array)
     }
 }
 
-bool SearchNumberInMatrix(int index1, int index2, int[,] array)
+int SearchNumberInMatrix(int index1, int index2, int[,] array)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (array[index1, index2] == array[i, j])
-            {
-                Console.WriteLine(array[i, j]);
-                return true;
-            }
-        }
-    }
-    return false;
+    return array[index1, index2];
 }
 
 int firstNumber = InputNumber("Задайте количество строк: ");
@@ -70,15 +59,16 @@ PrintMatrix(myMatrix);
 
 Console.WriteLine("\nИНДЕКСЫ НАЧИНАЮТСЯ С 0!");
 
-int rows = InputNumber("\nВведите искомый индекс строк: ");
-int columns = InputNumber("Введите искомый индекс столбцов: ");
+int row = InputNumber("\nВведите искомый индекс строк: ");
+int column = InputNumber("Введите искомый индекс столбцов: ");
 
-if (rows > myMatrix.GetLength(0) - 1 | columns > myMatrix.GetLength(0) - 1)
+if (row < 0 || row > myMatrix.GetLength(0) - 1 || column < 0 || column > myMatrix.GetLength(0) - 1)
 {
-    Console.WriteLine($"\n[{rows}, {columns}] -> Числа по заданному индексу не существует!");
+    Console.WriteLine($"\n[{row}, {column}] -> Числа по заданному индексу не существует!");
 }
 else
 {
-    Console.Write($"[{rows}, {columns}] -> ");
-    SearchNumberInMatrix(rows, columns, myMatrix);
+    Console.Write($"[{row}, {column}] -> ");
+    int result = SearchNumberInMatrix(row, column, myMatrix);
+    Console.WriteLine(result);
 }
